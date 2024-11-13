@@ -120,19 +120,19 @@ id_cultura (INT): Identificador único da cultura.
 
 nome (VARCHAR): Nome da cultura (ex: Trigo, Soja).
 
-Tabela: Safra
+### Tabela: Safra
 
 id_safra (INT): Identificador único da safra.
 
 ano (INT): Ano da safra.
 
-Tabela: Regiao
+### Tabela: Regiao
 
 id_regiao (INT): Identificador único da região
 
 nome (VARCHAR): Nome da região
 
-Tabela: Estado
+### Tabela: Estado
 
 id_estado (INT): Identificador único do estado.
 
@@ -140,7 +140,7 @@ nome (VARCHAR): Nome do estado.
 
 id_regiao (INT): Chave estrangeira que referencia a tabela Regiao.
 
-Tabela: Producao
+### Tabela: Producao
 
 id_producao (INT): Identificador único da produção.
 
