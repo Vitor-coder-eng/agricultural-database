@@ -2,10 +2,7 @@
 
 ![Logo FIAP](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/logo-fiap.png)
 
-
-# Produção de trigo no Brasil
-
-Este projeto visa criar um banco de dados para armazenar informações sobre a produção de trigo no Brasil com scripts SQL, consultas e documentação.
+### Produção agrícola no Brasil
 
 
 ## Índice
@@ -13,17 +10,17 @@ Este projeto visa criar um banco de dados para armazenar informações sobre a p
 1. [Descrição do Projeto](#descrição-do-projeto)
 2. [Modelagem de Dados](#modelagem-de-dados)
 3. [Diagrama Entidade-Relacionamento (MER)](#diagrama-entidade-relacionamento-mer)
-4. [Modelo Relacional](#modelo-relacional)
+4. [Modelo Lógico](#modelo-lógico)
 5. [Código SQL para Criação das Tabelas](#código-sql-para-criação-das-tabelas)
 6. [Consultas SQL](#consultas-sql)
 7. [Dicionário de Dados](#dicionário-de-dados)
-8. [Documentação](#documentação)
+8. [Conclusão](#conclusão)
 
 ---
 
 ### Descrição do Projeto
 
-Este projeto foi desenvolvido para fornecer um banco de dados que auxilie no armazenamento e análise de dados agrícolas. Ele permite consultar a produção agrícola por estado, safra e cultura, fornecendo informações como produtividade, área plantada e volume de produção.
+Este projeto foi desenvolvido para fornecer um banco de dados que auxilie no armazenamento e análise de dados agrícolas. Usamos a base de dados da Série Histórica de Trigo no Brasil da CONAB, porém, ele pode ser facilmente modificado para outras culturas. Ele permite consultar a produção agrícola por estado, safra e cultura, fornecendo informações como produtividade, área plantada e volume de produção.
 
 ### Modelagem de Dados
 
@@ -32,7 +29,7 @@ Aqui está uma visão geral da modelagem de dados utilizada para criar o banco d
 #### Diagrama Entidade-Relacionamento (MER)
 ![ Diagrama Entidade-Relacionamento](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/Modelo%20Entidade-Relacionamento.png)
 
-#### Modelo Relacional
+#### Modelo Lógico
 ![Modelo Relacional](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/Modelo%20L%C3%B3gico)
 
 ### Código SQL para Criação das Tabelas
@@ -40,7 +37,7 @@ Aqui está uma visão geral da modelagem de dados utilizada para criar o banco d
 Abaixo está o código SQL usado para criar as tabelas do banco de dados:
 
 ```sql
--- Código SQL para criação das tabelas
+Código SQL para criação das tabelas
 CREATE TABLE Cultura (
     id_cultura INT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL
@@ -84,7 +81,7 @@ Algumas consultas SQL relevantes para a análise de dados:
 ### Produção total de trigo por estado em uma safra:
 
 ```sql
--- SELECT e.nome AS estado, SUM(p.producao_mil_toneladas) AS producao_total
+SELECT e.nome AS estado, SUM(p.producao_mil_toneladas) AS producao_total
 FROM Producao p
 JOIN Estado e ON p.id_estado = e.id_estado
 WHERE p.id_cultura = <ID_DA_CULTURA> AND p.id_safra = <ID_DA_SAFRA>
@@ -94,7 +91,7 @@ GROUP BY e.nome;
 ### Evolução da área plantada de trigo ao longo dos anos:
 
 ```sql
--- SELECT s.ano, SUM(p.area_mil_ha) AS area_total
+SELECT s.ano, SUM(p.area_mil_ha) AS area_total
 FROM Producao p
 JOIN Safra s ON p.id_safra = s.id_safra
 WHERE p.id_cultura = <ID_DA_CULTURA>
@@ -105,7 +102,7 @@ ORDER BY s.ano;
 ### Ranking dos estados com maior produtividade de trigo
 
 ```sql
--- SELECT e.nome AS estado, AVG(p.produtividade_kg_ha) AS produtividade_media
+SELECT e.nome AS estado, AVG(p.produtividade_kg_ha) AS produtividade_media
 FROM Producao p
 JOIN Estado e ON p.id_estado = e.id_estado
 WHERE p.id_cultura = <ID_DA_CULTURA>
@@ -113,5 +110,44 @@ GROUP BY e.nome
 ORDER BY produtividade_media DESC;
 ```
 
+### Dicionário de Dados
+
+Abaixo está o dicionário de dados com as descrições das tabelas e colunas do banco de dados.
+Tabela: Cultura
+
+id_cultura (INT): Identificador único da cultura.
+nome (VARCHAR): Nome da cultura (ex: Trigo, Soja).
+
+Tabela: Safra
+
+id_safra (INT): Identificador único da safra.
+ano (INT): Ano da safra.
+
+Tabela: Regiao
+
+id_regiao (INT): Identificador único da região
+nome (VARCHAR): Nome da região
+
+Tabela: Estado
+
+id_estado (INT): Identificador único do estado.
+nome (VARCHAR): Nome do estado.
+id_regiao (INT): Chave estrangeira que referencia a tabela Regiao.
+
+Tabela: Producao
+
+id_producao (INT): Identificador único da produção.
+producao_mil_toneladas (FLOAT): Quantidade produzida em mil toneladas.
+area_mil_ha (FLOAT): Área plantada em mil hectares.
+produtividade_kg_ha (FLOAT): Produtividade em kg/ha.
+id_cultura (INT): Chave estrangeira para a tabela Cultura.
+id_estado (INT): Chave estrangeira para a tabela Estado.
+id_safra (INT): Chave estrangeira para a tabela Safra.
+
+### Conclusão
+
+Este projeto de modelagem de banco de dados foi desenvolvido para fornecer uma estrutura organizada e acessível para o armazenamento e análise de dados relacionados à produção agrícola no Brasil. Ao consolidar informações sobre culturas, safras, regiões e estados, o banco de dados possibilita consultas eficientes e permite uma visão abrangente do setor agrícola nacional. As consultas SQL preparadas, como análise da produção por safra e ranking de produtividade por estado, exemplificam o potencial do banco para apoiar decisões estratégicas e aprimorar a gestão de produção agrícola.
+
+Futuras melhorias podem incluir a automação da atualização dos dados e integração com fontes externas. Essa base de dados proporciona uma plataforma sólida e escalável, capaz de evoluir conforme as demandas de análise e gestão do setor agrícola.
 
 
