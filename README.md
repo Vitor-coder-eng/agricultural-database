@@ -7,6 +7,7 @@ Repositório para o projeto de banco de dados sobre produção de trigo no Brasi
 # Projeto de Banco de Dados Agrícola
 
 Este projeto visa criar um banco de dados para armazenar informações sobre a produção agrícola, incluindo dados de cultura, safra, estado e produção. 
+![Logo trigo](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/%E2%80%94Pngtree%E2%80%94wheat%20wheat_5398993.png)
 
 ## Índice
 
