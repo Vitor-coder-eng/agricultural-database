@@ -6,7 +6,7 @@
 # Produção de trigo no Brasil
 
 Este projeto visa criar um banco de dados para armazenar informações sobre a produção de trigo no Brasil com scripts SQL, consultas e documentação.
-![Logo trigo](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/%E2%80%94Pngtree%E2%80%94wheat%20wheat_5398993.png)
+
 
 ## Índice
 
@@ -30,10 +30,10 @@ Este projeto foi desenvolvido para fornecer um banco de dados que auxilie no arm
 Aqui está uma visão geral da modelagem de dados utilizada para criar o banco de dados agrícola.
 
 #### Diagrama Entidade-Relacionamento (MER)
-*Insira aqui uma imagem do diagrama Entidade-Relacionamento (MER)*
+![ Diagrama Entidade-Relacionamento](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/Modelo%20Entidade-Relacionamento.png)
 
 #### Modelo Relacional
-*Insira aqui uma imagem do diagrama do modelo relacional ou uma descrição do modelo.*
+![Modelo Relacional](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/Modelo%20L%C3%B3gico)
 
 ### Código SQL para Criação das Tabelas
 
@@ -49,6 +49,11 @@ CREATE TABLE Cultura (
 CREATE TABLE Safra (
     id_safra INT PRIMARY KEY,
     ano INT NOT NULL
+);
+
+CREATE TABLE Regiao (
+    id_regiao INT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Estado (
