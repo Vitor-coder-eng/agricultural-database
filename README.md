@@ -76,4 +76,42 @@ CREATE TABLE Producao (
     FOREIGN KEY (id_safra) REFERENCES Safra(id_safra)
 );
 
-### TESTE
+```
+### Consultas SQL
+
+Algumas consultas SQL relevantes para a análise de dados:
+
+### Produção total de trigo por estado em uma safra:
+
+```sql
+-- SELECT e.nome AS estado, SUM(p.producao_mil_toneladas) AS producao_total
+FROM Producao p
+JOIN Estado e ON p.id_estado = e.id_estado
+WHERE p.id_cultura = <ID_DA_CULTURA> AND p.id_safra = <ID_DA_SAFRA>
+GROUP BY e.nome;
+```
+
+### Evolução da área plantada de trigo ao longo dos anos:
+
+```sql
+-- SELECT s.ano, SUM(p.area_mil_ha) AS area_total
+FROM Producao p
+JOIN Safra s ON p.id_safra = s.id_safra
+WHERE p.id_cultura = <ID_DA_CULTURA>
+GROUP BY s.ano
+ORDER BY s.ano;
+```
+
+### Ranking dos estados com maior produtividade de trigo
+
+```sql
+-- SELECT e.nome AS estado, AVG(p.produtividade_kg_ha) AS produtividade_media
+FROM Producao p
+JOIN Estado e ON p.id_estado = e.id_estado
+WHERE p.id_cultura = <ID_DA_CULTURA>
+GROUP BY e.nome
+ORDER BY produtividade_media DESC;
+```
+
+
+
