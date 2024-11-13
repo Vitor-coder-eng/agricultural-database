@@ -117,32 +117,43 @@ Abaixo está o dicionário de dados com as descrições das tabelas e colunas do
 Tabela: Cultura
 
 id_cultura (INT): Identificador único da cultura.
+
 nome (VARCHAR): Nome da cultura (ex: Trigo, Soja).
 
 Tabela: Safra
 
 id_safra (INT): Identificador único da safra.
+
 ano (INT): Ano da safra.
 
 Tabela: Regiao
 
 id_regiao (INT): Identificador único da região
+
 nome (VARCHAR): Nome da região
 
 Tabela: Estado
 
 id_estado (INT): Identificador único do estado.
+
 nome (VARCHAR): Nome do estado.
+
 id_regiao (INT): Chave estrangeira que referencia a tabela Regiao.
 
 Tabela: Producao
 
 id_producao (INT): Identificador único da produção.
+
 producao_mil_toneladas (FLOAT): Quantidade produzida em mil toneladas.
+
 area_mil_ha (FLOAT): Área plantada em mil hectares.
+
 produtividade_kg_ha (FLOAT): Produtividade em kg/ha.
+
 id_cultura (INT): Chave estrangeira para a tabela Cultura.
+
 id_estado (INT): Chave estrangeira para a tabela Estado.
+
 id_safra (INT): Chave estrangeira para a tabela Safra.
 
 ### Conclusão
