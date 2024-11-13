@@ -75,3 +75,5 @@ CREATE TABLE Producao (
     FOREIGN KEY (id_estado) REFERENCES Estado(id_estado),
     FOREIGN KEY (id_safra) REFERENCES Safra(id_safra)
 );
+
+### TESTE
