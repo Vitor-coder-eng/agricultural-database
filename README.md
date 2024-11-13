@@ -114,7 +114,7 @@ ORDER BY produtividade_media DESC;
 
 Abaixo está o dicionário de dados com as descrições das tabelas e colunas do banco de dados.
 
-Tabela: Cultura
+### Tabela: Cultura
 
 id_cultura (INT): Identificador único da cultura.
 
