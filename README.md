@@ -1,3 +1,6 @@
+FIAP - 
+![Logo FIAP](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/logo-fiap.png)
+
 # agricultural-database
 Repositório para o projeto de banco de dados sobre produção de trigo no Brasil com scripts SQL, consultas e documentação
 # Projeto de Banco de Dados Agrícola
