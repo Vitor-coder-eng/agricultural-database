@@ -71,8 +71,6 @@ CREATE TABLE Producao (
 ```
 # Consultas SQL
 
-### Algumas consultas SQL relevantes para a análise de dados:
-
 ### Produção total de trigo por estado em uma safra:
 
 ```sql
