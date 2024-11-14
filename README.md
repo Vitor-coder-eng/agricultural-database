@@ -37,7 +37,6 @@ Aqui está uma visão geral da modelagem de dados utilizada para criar o banco d
 ### Abaixo está o código SQL usado para criar as tabelas do banco de dados:
 
 ```sql
-Código SQL para criação das tabelas
 CREATE TABLE Cultura (
     id_cultura INT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL
@@ -78,7 +77,7 @@ CREATE TABLE Producao (
 
 ### Algumas consultas SQL relevantes para a análise de dados:
 
-# Produção total de trigo por estado em uma safra:
+### Produção total de trigo por estado em uma safra:
 
 ```sql
 SELECT e.nome AS estado, SUM(p.producao_mil_toneladas) AS producao_total
@@ -88,7 +87,7 @@ WHERE p.id_cultura = <ID_DA_CULTURA> AND p.id_safra = <ID_DA_SAFRA>
 GROUP BY e.nome;
 ```
 
-# Evolução da área plantada de trigo ao longo dos anos:
+### Evolução da área plantada de trigo ao longo dos anos:
 
 ```sql
 SELECT s.ano, SUM(p.area_mil_ha) AS area_total
@@ -99,7 +98,7 @@ GROUP BY s.ano
 ORDER BY s.ano;
 ```
 
-# Ranking dos estados com maior produtividade de trigo
+### Ranking dos estados com maior produtividade de trigo
 
 ```sql
 SELECT e.nome AS estado, AVG(p.produtividade_kg_ha) AS produtividade_media
