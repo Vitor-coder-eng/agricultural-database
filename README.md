@@ -117,6 +117,7 @@ ORDER BY produtividade_media DESC;
 ### Tabela: Cultura
 
 id_cultura (INT): Identificador único da cultura.
+
 nome (VARCHAR): Nome da cultura (ex: Trigo, Soja).
 
 ### Tabela: Safra
