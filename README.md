@@ -24,8 +24,6 @@ Este projeto foi desenvolvido para fornecer um banco de dados que auxilie no arm
 
 # Modelagem de Dados
 
-Aqui está uma visão geral da modelagem de dados utilizada para criar o banco de dados agrícola.
-
 # Diagrama Entidade-Relacionamento (MER)
 ![ Diagrama Entidade-Relacionamento](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/Modelo%20Entidade-Relacionamento.png)
 
@@ -33,8 +31,6 @@ Aqui está uma visão geral da modelagem de dados utilizada para criar o banco d
 ![Modelo Relacional](https://github.com/Vitor-coder-eng/agricultural-database/blob/main/Modelo%20L%C3%B3gico)
 
 # Código SQL para Criação das Tabelas
-
-### Abaixo está o código SQL usado para criar as tabelas do banco de dados:
 
 ```sql
 CREATE TABLE Cultura (
@@ -110,8 +106,6 @@ ORDER BY produtividade_media DESC;
 ```
 
 # Dicionário de Dados
-
-### Abaixo está o dicionário de dados com as descrições das tabelas e colunas do banco de dados.
 
 ### Tabela: Cultura
 
